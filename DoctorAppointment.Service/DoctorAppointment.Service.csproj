@@ -9,4 +9,16 @@
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="Interfaces\" />
+    <None Remove="Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DoctorAppointment.Domain\DoctorAppointment.Domain.csproj" />
+    <ProjectReference Include="..\DoctorAppointment.Data\DoctorAppointment.Data.csproj" />
+  </ItemGroup>
 </Project>

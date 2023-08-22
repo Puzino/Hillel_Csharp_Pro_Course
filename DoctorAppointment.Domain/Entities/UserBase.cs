@@ -3,7 +3,6 @@ namespace DoctorAppointment.Domain.Entities
 {
 	public abstract class UserBase : Auditable
 	{
-        public int Id { get; set; }
 
         public string Name { get; set; }
 
