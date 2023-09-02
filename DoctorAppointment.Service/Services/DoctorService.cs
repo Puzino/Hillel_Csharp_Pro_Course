@@ -1,7 +1,9 @@
 ﻿using DoctorAppointment.Data.Interfaces;
 using DoctorAppointment.Data.Repositories;
 using DoctorAppointment.Domain.Entities;
+using DoctorAppointment.Service.Extentions;
 using DoctorAppointment.Service.Interfaces;
+using DoctorAppointment.Service.ViewModels;
 
 namespace DoctorAppointment.Service.Services
 {
@@ -13,7 +15,6 @@ namespace DoctorAppointment.Service.Services
         {
             _doctorRepository = new DoctorRepository();
         }
-
 
         public Doctor Create(Doctor doctor)
         {
@@ -30,11 +31,15 @@ namespace DoctorAppointment.Service.Services
             return _doctorRepository.GetById(id);
         }
 
-        public IEnumerable<Doctor> GetAll()
+        public IEnumerable<DoctorViewModel> GetAll()
         {
-            return _doctorRepository.GetAll();
+            var doctors = _doctorRepository.GetAll();
+            var doctorViewModels = doctors.Select(x => x.ConvertTo());
+            return doctorViewModels;
 
         }
+
+        // TODO Переделать остальное по аналогии
 
         public Doctor Update(int id, Doctor doctor)
         {

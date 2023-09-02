@@ -12,10 +12,14 @@
   <ItemGroup>
     <None Remove="Interfaces\" />
     <None Remove="Services\" />
+    <None Remove="ViewModels\" />
+    <None Remove="Extentions\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Interfaces\" />
     <Folder Include="Services\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Extentions\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DoctorAppointment.Domain\DoctorAppointment.Domain.csproj" />

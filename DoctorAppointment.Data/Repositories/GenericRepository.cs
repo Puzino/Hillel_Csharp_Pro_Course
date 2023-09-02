@@ -65,6 +65,8 @@ namespace DoctorAppointment.Data.Repositories
             return source;
         }
 
+        public abstract void ShowInfo(TSource source);
+      
         protected abstract void SaveLastId();
         protected dynamic ReadFromAppSettings() => JsonConvert.DeserializeObject<dynamic>(File.ReadAllText(Constants.AppSettingsPath));
 

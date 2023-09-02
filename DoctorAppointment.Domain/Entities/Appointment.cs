@@ -3,7 +3,7 @@ namespace DoctorAppointment.Domain.Entities
 {
 	public class Appointment : Auditable
 	{
-		public Patient Patient { get; set; }
+		public Patient? Patient { get; set; }
 
 		public Doctor? Doctor { get; set; }
 
