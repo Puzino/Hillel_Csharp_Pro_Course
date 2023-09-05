@@ -12,7 +12,5 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DoctorAppointment.Service\DoctorAppointment.Service.csproj" />
-    <ProjectReference Include="..\DoctorAppointment.Domain\DoctorAppointment.Domain.csproj" />
-    <ProjectReference Include="..\DoctorAppointment.Data\DoctorAppointment.Data.csproj" />
   </ItemGroup>
 </Project>

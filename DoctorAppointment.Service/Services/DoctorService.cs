@@ -16,9 +16,9 @@ namespace DoctorAppointment.Service.Services
             _doctorRepository = new DoctorRepository();
         }
 
-        public Doctor Create(Doctor doctor)
+        public DoctorViewModel Create(Doctor doctor)
         {
-            return _doctorRepository.Create(doctor);
+            return _doctorRepository.Create(doctor).ConvertTo();
         }
 
         public bool Delete(int id)
@@ -26,9 +26,9 @@ namespace DoctorAppointment.Service.Services
             return _doctorRepository.Delete(id);
         }
 
-        public Doctor? Get(int id)
+        public DoctorViewModel? Get(int id)
         {
-            return _doctorRepository.GetById(id);
+            return _doctorRepository.GetById(id).ConvertTo();
         }
 
         public IEnumerable<DoctorViewModel> GetAll()
@@ -39,12 +39,20 @@ namespace DoctorAppointment.Service.Services
 
         }
 
-        // TODO Переделать остальное по аналогии
-
-        public Doctor Update(int id, Doctor doctor)
+        public string ShowInfo(Doctor doctor)
         {
-            return _doctorRepository.Update(id, doctor);
+            string text = $"Doctor: {doctor.Surname} {doctor.Name}, " +
+                $"Doctor type: {doctor.DoctorType}, " +
+                $"Phone: {doctor.Phone ?? "--"}, " +
+                $"Email: {doctor.Email ?? "--"}, " +
+                $"Experiance: {doctor.Experiance} years. " +
+                $"Salary: {doctor.Salary}$.";
+            return text;
+        }
 
+        public DoctorViewModel Update(int id, Doctor doctor)
+        {
+            return _doctorRepository.Update(id, doctor).ConvertTo();
         }
     }
 }

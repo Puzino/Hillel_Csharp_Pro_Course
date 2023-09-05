@@ -1,7 +1,7 @@
 ﻿using DoctorAppointment.Data.Configuration;
 using DoctorAppointment.Data.Interfaces;
 using DoctorAppointment.Domain.Entities;
-using DoctorAppointment.Service
+//using DoctorAppointment.Service.ViewModels;
 
 namespace DoctorAppointment.Data.Repositories
 {
@@ -18,18 +18,6 @@ namespace DoctorAppointment.Data.Repositories
 
             Path = result.Database.Doctors.Path;
             LastId = result.Database.Doctors.LastId;
-        }
-
-        public override void ShowInfo(Doctor doctor)
-        {
-            Console.WriteLine($"ID: {doctor.Id}, " +
-                $"Doctor: {doctor.Surname} {doctor.Name}, " +
-                $"Doctor type: {doctor.DoctorType}, " +
-                $"Phone: {doctor.Phone ?? "--"}, " +
-                $"Email: {doctor.Email ?? "--"}, " +
-                $"Experiance: {doctor.Experiance} years. " +
-                $"Salary: {doctor.Salary}$.");
-            Console.WriteLine();
         }
 
         protected override void SaveLastId()

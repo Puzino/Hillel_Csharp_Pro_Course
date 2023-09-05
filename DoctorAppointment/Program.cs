@@ -1,9 +1,7 @@
 ﻿using DoctorAppointment.Service.Interfaces;
 using DoctorAppointment.Service.Services;
-using DoctorAppointment.Data.Repositories;
 using DoctorAppointment.Domain.Entities;
 using DoctorAppointment.Domain.Enums;
-using DoctorAppointment.Service.ViewModels;
 
 namespace DoctorAppointment
 {
@@ -11,12 +9,10 @@ namespace DoctorAppointment
     class DoctorAppointment
     {
         private readonly IDoctorService _doctroService;
-        private readonly DoctorRepository _doctorRepository;
 
         public DoctorAppointment()
         {
             _doctroService = new DoctorService();
-            _doctorRepository = new DoctorRepository();
         }
 
         public void Menu()
@@ -38,8 +34,22 @@ namespace DoctorAppointment
 
                             foreach (var doc in docs)
                             {
-                                
-                                _doctorRepository.ShowInfo(doc);
+                                DoctorTypes doctorType = Enum.Parse<DoctorTypes>(doc.DoctorType);
+
+
+                                // TODO ТУТ КОСТЫЛЬ !
+                                var showDoctor = new Doctor
+                                {
+                                    Name = doc.Name,
+                                    Surname = doc.Surname,
+                                    Experiance = doc.Experiance,
+                                    DoctorType = doctorType,
+                                    Phone = doc.Phone,
+                                    Email = doc.Email,
+                                    Salary = doc.Salary,
+                                };
+                                Console.WriteLine(_doctroService.ShowInfo(showDoctor));
+
                             }
                             break;
 
@@ -80,7 +90,7 @@ namespace DoctorAppointment
                                 };
                                 _doctroService.Create(newDoctor);
                                 Console.WriteLine("Successful creation!");
-                                _doctorRepository.ShowInfo(newDoctor);
+                                Console.WriteLine(_doctroService.ShowInfo(newDoctor));
                                 break;
                             }
                             catch (Exception ex)
