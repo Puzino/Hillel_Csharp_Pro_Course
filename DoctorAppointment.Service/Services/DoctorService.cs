@@ -11,9 +11,9 @@ namespace DoctorAppointment.Service.Services
 	{
         private readonly IDoctorRepository _doctorRepository;
 
-        public DoctorService()
+        public DoctorService(string appSettings, ISerialize serializeService)
         {
-            _doctorRepository = new DoctorRepository();
+            _doctorRepository = new DoctorRepository(appSettings, serializeService);
         }
 
         public DoctorViewModel Create(Doctor doctor)

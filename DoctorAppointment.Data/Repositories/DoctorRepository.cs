@@ -1,20 +1,21 @@
-﻿using DoctorAppointment.Data.Configuration;
-using DoctorAppointment.Data.Interfaces;
+﻿using DoctorAppointment.Data.Interfaces;
 using DoctorAppointment.Domain.Entities;
-//using DoctorAppointment.Service.ViewModels;
 
 namespace DoctorAppointment.Data.Repositories
 {
     public class DoctorRepository : GenericRepository<Doctor>, IDoctorRepository
     {
+        private readonly ISerialize serializeService;
 
         public override string Path { get; set; }
 
         public override int LastId { get; set; }
 
-        public DoctorRepository()
+        public DoctorRepository(string appSettings, ISerialize serialize) : base(appSettings, serialize)
         {
-            dynamic result = ReadFromAppSettings();
+            serializeService = serialize;
+
+            var result = ReadFromAppSettings();
 
             Path = result.Database.Doctors.Path;
             LastId = result.Database.Doctors.LastId;
@@ -25,7 +26,7 @@ namespace DoctorAppointment.Data.Repositories
             dynamic result = ReadFromAppSettings();
             result.Database.Doctors.LastId = LastId;
 
-            File.WriteAllText(Constants.AppSettingsPath, result.ToString());
+            serializeService.Serialize(AppSettings, result);
         }
     }
 }

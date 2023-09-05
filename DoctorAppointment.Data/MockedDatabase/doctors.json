@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "DoctorType": 1,
+    "Experiance": 1,
+    "Salary": 1.0,
+    "Name": "1",
+    "Surname": "1",
+    "Phone": "1",
+    "Email": "1",
+    "Id": 1,
+    "CreateAt": "2023-09-05T19:07:17.204654+03:00",
+    "UpdateAt": "0001-01-01T00:00:00"
+  }
+]
