@@ -1,6 +1,5 @@
 ﻿using DoctorAppointment.Data.Interfaces;
 using Newtonsoft.Json;
-using System.Xml.Serialization;
 
 namespace DoctorAppointment.Service.Services
 {
@@ -9,7 +8,7 @@ namespace DoctorAppointment.Service.Services
         public T Deserialize<T>(string path)
         {
             var json = File.ReadAllText(path);
-            return JsonConvert.DeserializeObject<T>(json);
+            return (T)JsonConvert.DeserializeObject<T>(json);
         }
 
         public void Serialize<T>(string path, T data)
