@@ -21,6 +21,27 @@ namespace DoctorAppointment.Data.Repositories
             LastId = result.Database.Doctors.LastId;
         }
 
+
+        public override void ShowInfo(Doctor doctor)
+        {
+            if (doctor != null)
+            {
+                string text = $"ID: {doctor.Id} " +
+                $"Doctor: {doctor.Surname} {doctor.Name}, " +
+                $"Doctor type: {doctor.DoctorType}, " +
+                $"Phone: {doctor.Phone ?? "--"}, " +
+                $"Email: {doctor.Email ?? "--"}, " +
+                $"Experiance: {doctor.Experiance} years. " +
+                $"Salary: {doctor.Salary}$.";
+
+                Console.WriteLine(text);
+            }
+            else
+            {
+                throw new ArgumentNullException(nameof(doctor) + " can't be null");
+            }
+        }
+
         protected override void SaveLastId()
         {
             dynamic result = ReadFromAppSettings();
@@ -28,6 +49,8 @@ namespace DoctorAppointment.Data.Repositories
 
             serializeService.Serialize(AppSettings, result);
         }
+
+
     }
 }
 

@@ -68,7 +68,7 @@ namespace DoctorAppointment.Data.Repositories
             return source;
         }
 
-        //public abstract void ShowInfo(TSource source);
+        public abstract void ShowInfo(TSource source);
 
         protected abstract void SaveLastId();
 

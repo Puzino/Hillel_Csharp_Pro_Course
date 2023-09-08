@@ -10,5 +10,41 @@
     "Id": 1,
     "CreateAt": "2023-09-05T19:07:17.204654+03:00",
     "UpdateAt": "0001-01-01T00:00:00"
+  },
+  {
+    "DoctorType": 2,
+    "Experiance": 2,
+    "Salary": 2.0,
+    "Name": "2",
+    "Surname": "2",
+    "Phone": "2",
+    "Email": "2",
+    "Id": 2,
+    "CreateAt": "2023-09-07T21:45:36.288584+03:00",
+    "UpdateAt": "0001-01-01T00:00:00"
+  },
+  {
+    "DoctorType": 1,
+    "Experiance": 1,
+    "Salary": 1.0,
+    "Name": "1",
+    "Surname": "1",
+    "Phone": "1",
+    "Email": "1",
+    "Id": 3,
+    "CreateAt": "2023-09-07T22:11:09.414019+03:00",
+    "UpdateAt": "0001-01-01T00:00:00"
+  },
+  {
+    "DoctorType": 3,
+    "Experiance": 3,
+    "Salary": 3.0,
+    "Name": "3",
+    "Surname": "3",
+    "Phone": "3",
+    "Email": "3",
+    "Id": 4,
+    "CreateAt": "2023-09-07T22:22:43.287536+03:00",
+    "UpdateAt": "0001-01-01T00:00:00"
   }
 ]

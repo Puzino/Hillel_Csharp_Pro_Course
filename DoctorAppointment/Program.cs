@@ -38,21 +38,20 @@ namespace DoctorAppointment
 
                         foreach (var doc in docs)
                         {
-                            DoctorTypes doctorType1 = Enum.Parse<DoctorTypes>(doc.DoctorType);
-
+                            //DoctorTypes doctorType1 = Enum.Parse<DoctorTypes>(doc.DoctorType);
 
                             // TODO ТУТ КОСТЫЛЬ! Разобраться!
-                            var showDoctor = new Doctor
-                            {
-                                Name = doc.Name,
-                                Surname = doc.Surname,
-                                Experiance = doc.Experiance,
-                                DoctorType = doctorType1,
-                                Phone = doc.Phone,
-                                Email = doc.Email,
-                                Salary = doc.Salary,
-                            };
-                            Console.WriteLine(_doctroService.ShowInfo(showDoctor));
+                            //var showDoctor = new Doctor
+                            //{
+                            //    Name = doc.Name,
+                            //    Surname = doc.Surname,
+                            //    Experiance = doc.Experiance,
+                            //    DoctorType = doctorType1,
+                            //    Phone = doc.Phone,
+                            //    Email = doc.Email,
+                            //    Salary = doc.Salary,
+                            //};
+                            _doctroService.ShowInfo(doc);
 
                         }
                         break;
@@ -101,7 +100,7 @@ namespace DoctorAppointment
                         };
                         _doctroService.Create(newDoctor);
                         Console.WriteLine("Successful creation!");
-                        Console.WriteLine(_doctroService.ShowInfo(newDoctor));
+                        _doctroService.ShowInfo(newDoctor);
                         break;
                     //}
                     //catch (Exception ex)

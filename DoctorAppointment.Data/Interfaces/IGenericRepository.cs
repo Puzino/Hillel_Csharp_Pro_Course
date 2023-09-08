@@ -12,6 +12,8 @@ namespace DoctorAppointment.Data.Interfaces
 
         IEnumerable<TSource> GetAll();
 
+        void ShowInfo(TSource user);
+
         bool Delete(int id);
     }
 }
