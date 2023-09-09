@@ -29,7 +29,7 @@ namespace DoctorAppointment.Service.Extentions
 				Email = doctor.Email,
 				Phone = doctor.Phone,
 				DoctorType = doctorType,
-				Experiance = doctor.Experiance,
+				Experiance = doctor.Experience,
 				Salary = doctor.Salary,
 			};
         }
@@ -51,7 +51,7 @@ namespace DoctorAppointment.Service.Extentions
                 Email = doctor.Email,
                 Phone = doctor.Phone,
                 DoctorType = doctorType,
-                Experiance = doctor.Experiance,
+                Experience = doctor.Experiance,
                 Salary = doctor.Salary,
             };
         }

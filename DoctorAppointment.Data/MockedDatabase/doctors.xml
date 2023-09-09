@@ -1,4 +1,15 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<doctors>
-
-</doctors>
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfDoctor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Doctor>
+    <Id>1</Id>
+    <CreatedAt>2023-09-05T19:07:17.204654+03:00</CreatedAt>
+    <UpdatedAt>0001-01-01T00:00:00</UpdatedAt>
+    <Name>Anton</Name>
+    <Surname>Popov</Surname>
+    <Phone>123123123</Phone>
+    <Email>qwe@gmail.com</Email>
+    <DoctorType>FamilyDoctor</DoctorType>
+    <Experience>1</Experience>
+    <Salary>2222</Salary>
+  </Doctor>
+</ArrayOfDoctor>

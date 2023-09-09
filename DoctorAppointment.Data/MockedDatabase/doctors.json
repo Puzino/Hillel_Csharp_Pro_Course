@@ -1,7 +1,7 @@
 [
   {
     "DoctorType": 1,
-    "Experiance": 1,
+    "Experience": 0,
     "Salary": 1.0,
     "Name": "1",
     "Surname": "1",
@@ -13,7 +13,7 @@
   },
   {
     "DoctorType": 2,
-    "Experiance": 2,
+    "Experience": 0,
     "Salary": 2.0,
     "Name": "2",
     "Surname": "2",
@@ -25,7 +25,7 @@
   },
   {
     "DoctorType": 1,
-    "Experiance": 1,
+    "Experience": 0,
     "Salary": 1.0,
     "Name": "1",
     "Surname": "1",
@@ -37,7 +37,7 @@
   },
   {
     "DoctorType": 3,
-    "Experiance": 3,
+    "Experience": 0,
     "Salary": 3.0,
     "Name": "3",
     "Surname": "3",
@@ -45,6 +45,18 @@
     "Email": "3",
     "Id": 4,
     "CreateAt": "2023-09-07T22:22:43.287536+03:00",
+    "UpdateAt": "0001-01-01T00:00:00"
+  },
+  {
+    "DoctorType": 5,
+    "Experience": 5,
+    "Salary": 5.0,
+    "Name": "5",
+    "Surname": "5",
+    "Phone": "5",
+    "Email": "5",
+    "Id": 5,
+    "CreateAt": "2023-09-09T12:53:39.053374+03:00",
     "UpdateAt": "0001-01-01T00:00:00"
   }
 ]
