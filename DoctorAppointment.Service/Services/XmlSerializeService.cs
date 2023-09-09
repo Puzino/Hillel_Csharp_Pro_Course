@@ -1,4 +1,5 @@
 ﻿using DoctorAppointment.Data.Interfaces;
+using DoctorAppointment.Service.ViewModels;
 using System.Xml.Serialization;
 
 namespace DoctorAppointment.Service.Services
@@ -9,8 +10,11 @@ namespace DoctorAppointment.Service.Services
         {
             XmlSerializer serializer = new XmlSerializer(typeof(T));
 
+
             using (FileStream stream = new FileStream(path, FileMode.OpenOrCreate))
             {
+                //DoctorViewModel obj = serializer.Deserialize(stream);
+                
                 return (T)serializer.Deserialize(stream);
             }
         }

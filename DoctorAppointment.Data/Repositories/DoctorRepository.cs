@@ -31,7 +31,7 @@ namespace DoctorAppointment.Data.Repositories
                 $"Doctor type: {doctor.DoctorType}, " +
                 $"Phone: {doctor.Phone ?? "--"}, " +
                 $"Email: {doctor.Email ?? "--"}, " +
-                $"Experiance: {doctor.Experiance} years. " +
+                $"Experiance: {doctor.Experience} years. " +
                 $"Salary: {doctor.Salary}$.";
 
                 Console.WriteLine(text);
