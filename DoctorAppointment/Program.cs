@@ -96,7 +96,7 @@ namespace DoctorAppointment
                             Name = name,
                             Surname = surname,
                             Experience = experiance,
-                            DoctorType = doctorType,
+                            DoctorType = DoctorTypes.FamilyDoctor,
                             Phone = phone,
                             Email = email,
                             Salary = salary,
