@@ -8,7 +8,7 @@ namespace DoctorAppointment.Service.Services
         public T Deserialize<T>(string path)
         {
             var json = File.ReadAllText(path);
-            return (T)JsonConvert.DeserializeObject<T>(json);
+            return JsonConvert.DeserializeObject<T>(json);
         }
 
         public void Serialize<T>(string path, T data)

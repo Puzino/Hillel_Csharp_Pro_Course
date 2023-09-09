@@ -1,9 +1,8 @@
 ﻿using System;
 namespace DoctorAppointment.Domain.Entities
 {
-	public abstract class UserBase : Auditable
-	{
-
+    public abstract class UserBase : Auditable
+    {
         public string Name { get; set; } = string.Empty;
 
         public string Surname { get; set; } = string.Empty;
@@ -11,7 +10,6 @@ namespace DoctorAppointment.Domain.Entities
         public string? Phone { get; set; }
 
         public string? Email { get; set; }
-
-	}
+    }
 }
 

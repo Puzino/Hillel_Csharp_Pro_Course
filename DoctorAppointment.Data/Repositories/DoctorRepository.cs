@@ -21,7 +21,6 @@ namespace DoctorAppointment.Data.Repositories
             LastId = result.Database.Doctors.LastId;
         }
 
-
         public override void ShowInfo(Doctor doctor)
         {
             if (doctor != null)
@@ -49,8 +48,6 @@ namespace DoctorAppointment.Data.Repositories
 
             serializeService.Serialize(AppSettings, result);
         }
-
-
     }
 }
 

@@ -4,8 +4,8 @@ using DoctorAppointment.Service.Interfaces;
 
 namespace DoctorAppointment.Service.Interfaces
 {
-	public interface IDoctorService : IService<Doctor>
-	{
+    public interface IDoctorService : IService<Doctor>
+    {
 
     }
 }
