@@ -4,14 +4,14 @@ using DoctorAppointment.Service.ViewModels;
 
 namespace DoctorAppointment.Service.Extentions
 {
-	public static class Mapper
-	{
-		public static DoctorViewModel ConvertTo(this Doctor doctor)
-		{
-			if (doctor == null)
-				return null;
+    public static class Mapper
+    {
+        public static DoctorViewModel ConvertTo(this Doctor doctor)
+        {
+            if (doctor == null)
+                return null;
 
-			string doctorType = string.Empty;
+            string doctorType = string.Empty;
 
             doctorType = doctor.DoctorType switch
             {
@@ -23,15 +23,15 @@ namespace DoctorAppointment.Service.Extentions
             };
 
             return new DoctorViewModel()
-			{
-				Name = doctor.Name,
-				Surname = doctor.Surname,
-				Email = doctor.Email,
-				Phone = doctor.Phone,
-				DoctorType = doctorType,
-				Experiance = doctor.Experience,
-				Salary = doctor.Salary,
-			};
+            {
+                Name = doctor.Name,
+                Surname = doctor.Surname,
+                Email = doctor.Email,
+                Phone = doctor.Phone,
+                DoctorType = doctorType,
+                Experiance = doctor.Experience,
+                Salary = doctor.Salary,
+            };
         }
 
         public static Doctor ConvertTo(this DoctorViewModel doctor)

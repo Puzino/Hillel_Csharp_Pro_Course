@@ -8,25 +8,18 @@ namespace DoctorAppointment.Service.Services
     {
         public T Deserialize<T>(string path)
         {
-            XmlSerializer serializer = new XmlSerializer(typeof(T));
+            XmlSerializer serializer = new(typeof(T));
 
-
-            using (FileStream stream = new FileStream(path, FileMode.OpenOrCreate))
-            {
-                //DoctorViewModel obj = serializer.Deserialize(stream);
-                
-                return (T)serializer.Deserialize(stream);
-            }
+            using FileStream stream = new(path, FileMode.OpenOrCreate);
+            return (T)serializer.Deserialize(stream);
         }
 
         public void Serialize<T>(string path, T data)
         {
-            XmlSerializer formatter = new XmlSerializer(typeof(T));
+            XmlSerializer formatter = new(typeof(T));
 
-            using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
-            {
-                formatter.Serialize(fs, data);
-            }
+            using FileStream fs = new(path, FileMode.OpenOrCreate);
+            formatter.Serialize(fs, data);
         }
     }
 }

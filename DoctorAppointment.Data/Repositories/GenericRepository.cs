@@ -24,14 +24,15 @@ namespace DoctorAppointment.Data.Repositories
             SerializeService = serializeService;
         }
 
-
         public TSource Create(TSource source)
         {
-            
+
             source.Id = ++LastId;
             source.CreateAt = DateTime.Now;
 
-            SerializeService.Serialize(Path, GetAll().Append(source));
+            var doctors = GetAll().Append(source).ToArray();
+
+            SerializeService.Serialize(Path, doctors);
 
             SaveLastId();
 
@@ -50,7 +51,7 @@ namespace DoctorAppointment.Data.Repositories
 
         public IEnumerable<TSource> GetAll()
         {
-            
+
             return SerializeService.Deserialize<List<TSource>>(Path);
         }
 
@@ -77,7 +78,6 @@ namespace DoctorAppointment.Data.Repositories
         {
             return SerializeService.Deserialize<Repository>(AppSettings);
         }
-
     }
 }
 

@@ -2,8 +2,8 @@
 
 namespace DoctorAppointment.Data.Interfaces
 {
-	public interface IGenericRepository<TSource> where TSource : Auditable
-	{
+    public interface IGenericRepository<TSource> where TSource : Auditable
+    {
         TSource Create(TSource source);
 
         TSource? GetById(int id);
@@ -17,4 +17,3 @@ namespace DoctorAppointment.Data.Interfaces
         bool Delete(int id);
     }
 }
-
