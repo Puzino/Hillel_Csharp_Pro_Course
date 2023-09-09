@@ -2,7 +2,8 @@
 {
 	public static class Constants
 	{
-		public const string AppSettingsPath = "/Users/puzino/Projects/Hillel_Csharp_Pro_Course/DoctorAppointment.Data/Configuration/appsettings.json";
-	}
+		public const string JsonAppSettingsPath = "/Users/puzino/Projects/Hillel_Csharp_Pro_Course/DoctorAppointment.Data/Configuration/appsettings.json";
+        public const string XmlAppSettingsPath = "/Users/puzino/Projects/Hillel_Csharp_Pro_Course/DoctorAppointment.Data/Configuration/appsettings.xml";
+    }
 }
 

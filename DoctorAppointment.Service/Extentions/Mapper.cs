@@ -33,6 +33,28 @@ namespace DoctorAppointment.Service.Extentions
 				Salary = doctor.Salary,
 			};
         }
+
+        public static Doctor ConvertTo(this DoctorViewModel doctor)
+        {
+            if (doctor == null)
+                return null;
+
+            DoctorTypes doctorType;
+
+            doctorType = Enum.TryParse(doctor.DoctorType, true, out doctorType) ? doctorType : 0;
+
+            return new Doctor()
+            {
+                Id = doctor.Id,
+                Name = doctor.Name,
+                Surname = doctor.Surname,
+                Email = doctor.Email,
+                Phone = doctor.Phone,
+                DoctorType = doctorType,
+                Experiance = doctor.Experiance,
+                Salary = doctor.Salary,
+            };
+        }
     }
 }
 

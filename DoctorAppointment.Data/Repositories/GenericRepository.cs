@@ -8,9 +8,21 @@ namespace DoctorAppointment.Data.Repositories
 {
     public abstract class GenericRepository<TSource> : IGenericRepository<TSource> where TSource : Auditable
     {
+
+        public string AppSettings { get; private set; }
+
+        public ISerialize SerializeService { get; private set; }
+
         public abstract string Path { get; set; }
 
         public abstract int LastId { get; set; }
+
+
+        public GenericRepository(string appSettings, ISerialize serializeService)
+        {
+            AppSettings = appSettings;
+            SerializeService = serializeService;
+        }
 
 
         public TSource Create(TSource source)
@@ -18,7 +30,8 @@ namespace DoctorAppointment.Data.Repositories
             source.Id = ++LastId;
             source.CreateAt = DateTime.Now;
 
-            File.WriteAllText(Path, JsonConvert.SerializeObject(GetAll().Append(source), Formatting.Indented));
+            SerializeService.Serialize(Path, GetAll().Append(source));
+
             SaveLastId();
 
             return source;
@@ -29,25 +42,15 @@ namespace DoctorAppointment.Data.Repositories
             if (GetById(id) is null)
                 return false;
 
-            File.WriteAllText(Path, JsonConvert.SerializeObject(GetAll().Where(x => x.Id == id), Formatting.Indented));
+            SerializeService.Serialize(Path, GetAll().Where(x => x.Id != id));
 
             return true;
         }
 
         public IEnumerable<TSource> GetAll()
         {
-            if (!File.Exists(Path))
-            {
-                File.WriteAllText(Path, "[]");
-            }
-
-            var json = File.ReadAllText(Path);
-            if (string.IsNullOrWhiteSpace(json))
-            {
-                File.WriteAllText(Path, "[]");
-                json = "[]";
-            }
-            return JsonConvert.DeserializeObject<List<TSource>>(json)!;
+            
+            return SerializeService.Deserialize<List<TSource>>(Path);
         }
 
         public TSource? GetById(int id)
@@ -60,15 +63,19 @@ namespace DoctorAppointment.Data.Repositories
             source.UpdateAt = DateTime.Now;
             source.Id = id;
 
-            File.WriteAllText(Path, JsonConvert.SerializeObject(GetAll().Select(x => x.Id == id ? source : x), Formatting.Indented));
+            SerializeService.Serialize(Path, GetAll().Select(x => x.Id == id ? source : x));
 
             return source;
         }
 
-        //public abstract void ShowInfo(TSource source);
+        public abstract void ShowInfo(TSource source);
 
         protected abstract void SaveLastId();
-        protected dynamic ReadFromAppSettings() => JsonConvert.DeserializeObject<dynamic>(File.ReadAllText(Constants.AppSettingsPath));
+
+        protected Repository ReadFromAppSettings()
+        {
+            return SerializeService.Deserialize<Repository>(AppSettings);
+        }
 
     }
 }
