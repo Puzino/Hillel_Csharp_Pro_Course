@@ -31,6 +31,7 @@ namespace DoctorAppointment
                 switch (choiceMenu)
                 {
                     case ChoiceMenu.ShowInfo:
+                        // TODO Открыть обработчик ошибок
                         //try
                         //{
                         Console.WriteLine("Current doctors list: ");
@@ -40,7 +41,7 @@ namespace DoctorAppointment
                         {
                             //DoctorTypes doctorType1 = Enum.Parse<DoctorTypes>(doc.DoctorType);
 
-                            // TODO ТУТ КОСТЫЛЬ! Разобраться!
+                            // TODO Удалить от..
                             //var showDoctor = new Doctor
                             //{
                             //    Name = doc.Name,
@@ -51,6 +52,8 @@ namespace DoctorAppointment
                             //    Email = doc.Email,
                             //    Salary = doc.Salary,
                             //};
+                            // TODO Удалить до..
+
                             _doctroService.ShowInfo(doc);
 
                         }
@@ -92,7 +95,7 @@ namespace DoctorAppointment
                         {
                             Name = name,
                             Surname = surname,
-                            Experiance = experiance,
+                            Experience = experiance,
                             DoctorType = doctorType,
                             Phone = phone,
                             Email = email,
