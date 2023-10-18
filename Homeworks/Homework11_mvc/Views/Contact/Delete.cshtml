@@ -1,0 +1,58 @@
+@model Contact
+
+<div class="container shadow p-5">
+    <div class="row pb-2">
+        <h2>Delete Contact</h2>
+    </div>
+
+    <form method="post" asp-action="DeleteContact">
+        <input asp-for="Id" hidden />
+        <div asp-validation-summary="All"></div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label asp-for="ContactName">ContactName</label>
+                <input type="text" class="form-control mb-3" asp-for="ContactName" placeholder="Enter Name" disabled>
+                <span asp-validation-for="ContactName" class=" alert-danger"></span>
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="Phone">Phone</label>
+                <input type="text" class="form-control mb-3" asp-for="Phone" placeholder="Phone" disabled>
+                <span asp-validation-for="Phone" class=" alert-danger"></span>
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="AlterPhone">Alter Phone</label>
+                <input type="text" class="form-control mb-3" asp-for="AlterPhone" placeholder="AlterPhone" disabled>
+                <span asp-validation-for="AlterPhone" class=" alert-danger"></span>
+            </div>
+            
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label asp-for="Email">Email</label>
+                <input type="text" class="form-control mb-3" asp-for="Email" placeholder="Enter Email" disabled>
+                <span asp-validation-for="Email" class=" alert-danger"></span>
+            </div>
+            <div class="form-group col-md-6 mb-3">
+                <label asp-for="TextAboutNumber">TextAboutNumber</label>
+                <input type="text" class="form-control" asp-for="TextAboutNumber" disabled>
+                <span asp-validation-for="TextAboutNumber" class=" alert-danger"></span>
+            </div>
+        </div>
+
+
+        <button type="submit" class="btn btn-lg btn-danger p-2"><i class="bi bi-trash-fill"></i>Delete</button>
+        <a asp-controller="Contact" asp-action="Index" class="btn btn-lg btn-warning p-2">Back To List</a>
+    </form>
+
+</div>
+
+
+@*//for front end validations*@
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
