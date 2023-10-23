@@ -1,0 +1,59 @@
+@model Movie
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Movie</h4>
+    <hr/>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MovieName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MovieName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Director)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Director)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Style)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Style)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Sessions)
+        </dt>
+        <dd class="col-sm-10">
+            @foreach (var session in Model.Sessions)
+            {
+                <div>
+                    <hr/>
+                    <span>@Html.DisplayNameFor(modelItem => session.Id): @Html.DisplayFor(modelItem => session.Id).<br></span>
+                    <span>@Html.DisplayNameFor(modelItem => session.Room): @Html.DisplayFor(modelItem => session.Room).<br></span>
+                    <span>@Html.DisplayNameFor(modelItem => session.Price): @Html.DisplayFor(modelItem => session.Price)$.<br></span>
+                    <span>@Html.DisplayNameFor(modelItem => session.DateTime): @Html.DisplayFor(modelItem => session.DateTime).</span>
+                </div>
+            }
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

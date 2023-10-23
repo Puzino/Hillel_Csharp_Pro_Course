@@ -1,0 +1,73 @@
+@model IEnumerable<Session>
+
+@{
+    ViewData["Title"] = "Session";
+}
+
+<h1>Sessions</h1>
+<div class="btn-group">
+    <a class="btn btn-primary" asp-action="Create" asp-controller="Session">Add Session</a>
+</div>
+
+@if (Model.Count() > 0)
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movie.MovieName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MovieId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Room)
+            </th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Movie.MovieName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MovieId)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Room)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+else
+{
+    <h3>Your session is empty</h3>
+}
