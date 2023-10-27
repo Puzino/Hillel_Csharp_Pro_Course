@@ -1,0 +1,275 @@
+body {
+    background-color: #e1e1e1;
+    font-family: 'Montserrat', sans-serif;
+}
+
+hr {
+    margin-top: 18px;
+    height: 1px;
+    border: 0;
+    background-color: #1e2939;
+}
+
+/* Img */
+.main_img {
+    width: 370px;
+    height: 340px;
+}
+
+/* Main container */
+.main_container {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 1050px;
+    background-color: #fff;
+    margin: 40px auto;
+}
+
+.main_content_section {
+    padding: 100px 90px;
+}
+
+.main_content_title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 27px;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+/* about me section */
+.about_me_section {
+    margin: 0 0 40px 0;
+}
+
+/* about me professional */
+.about_me_professional {
+    color: #000;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+/* about me name */
+.about_me_name {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 45px;
+    line-height: 55px;
+    color: #000;
+}
+
+/* about me discription */
+.about_me_discription {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #595959;
+    width: 400px;
+}
+/* about me city */
+.about_me_city {
+    font-size: 12px;
+    color: #565e6a;
+}
+
+/* my projects sections */
+
+.projects_section {
+    margin: 0 0 50px 0;
+}
+
+.projects_list {
+    padding: 0 0 0 17px;
+}
+
+.projects_item {
+    color: #000;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.project_link {
+    color: #fb6d3a;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.projects_text {
+    color: #565e6a;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    margin-left: 5px;
+}
+
+.project_breket {
+    color: #000;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+/* work expireance */
+.work_expireance_job {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.work_expireance_comapny {
+    color: #fb6d3a;
+}
+
+.work_expireance_date {
+    color: #a8a8a8;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+.work_expireance_line {
+    color: #000;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+.work_expireance_list {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #595959;
+    width: 500px;
+    margin: 0 0 15px 0;
+    padding: 0 0 0 17px;
+}
+
+/* education */
+.education_university {
+    color: #fb6d3a;
+    margin: 0 0 15px 0;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.education_speciality {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000;
+    margin: 0 0 0 0;
+}
+
+.education_period {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: #a8a8a8;
+}
+
+.education_line {
+    color: #000;
+}
+
+/* Sidebar */
+
+.sidebar {
+    background-color: #1e2939;
+    width: 370px;
+    padding: 40px 0;
+}
+
+.sidebar_title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 27px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+/* Contact */
+
+.contact_section_type {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 24px;
+    color: #fff;
+    margin-right: 10px;
+}
+
+.contact_section_link {
+    color: #565e6a;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+/* Skills_section */
+
+.soft_skills_section,
+.tech_skills_section,
+.contact_section {
+    margin: 50px 0 0 40px;
+    text-decoration: none;
+}
+
+.skills_section {
+    padding: 0 0 0 15px;
+    color: #fff;
+}
+
+.skills_section_item {
+    color: #fb6d3a;
+}
+
+.skills_section_item_text {
+    color: #fff;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+/* courses */
+.course {
+    display: flex;
+    justify-content: space-between;
+}
+
+.course__img {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.course__sertificate {
+    width: 250px;
+    border: 1px #000 solid;
+    background-color: aquamarine;
+    transition: transform 0.2s linear;
+}
+
+.course__sertificate:hover {
+    border: 1px #fb6d3a solid;
+    transform: translate3d(-10px, -10px, 0);
+
+}
